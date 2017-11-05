@@ -22,8 +22,6 @@ main PROC
 	
 	cmp ecx, 2  ; Special case if n=2
 	je e
-	
-	sub ecx, 2  ; Disregard these special cases in lp
 
 	
 	lp:
@@ -34,8 +32,8 @@ main PROC
 	add eax, ebx  ; Add cur and preceding num to get next in sequence
 	
 	dec ecx  ; Decrement n
-	cmp ecx, 0  
-	ja lp  ; Loop if not yet zero
+	cmp ecx, 2  
+	ja lp
 
 	
 	e:
